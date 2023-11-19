@@ -379,18 +379,45 @@ document.write(`
 <p>This chapter is still under construction.</p>
 </div>
 
-<h1 id="index">Module 2: Understanding Data Formats</h1>
-Data comes in various structured and unstructured formats. Much of what hinders data utilization is that data is available in formats that can’t be immediately used or read by a computer. Modern data analysis relies on software to do the heavy lifting involved in data analysis for us. Common data formats are standardized ways of structuring and encoding data for storage, exchange, and processing. They play a crucial role in data interoperability, as they enable different systems and applications to understand and work with data consistently. Here are some common data formats used in various domains: <br><br>
+<h1 id="index">Module 3: Introduction to the different types of databases</h1>
+A database is a collection of data about entities. It can be more or less structured, depending on the type of database.  It can include information about the relationships between entities. It is designed to:  get and link data from multiple sources, store it efficiently so that we can analyze it easily, quickly, and efficiently and provide the results to other applications/people/systems.
+Most of us are used to using what’s called “flat files” with each row reflecting all the information we have on one individual over time. That structure leads to a lot of problems. Data is redundant: the same data is stored in multiple locations. Data are inconsistent because they are not all updated at the same time or in the same way. 
+A database management system (DBMS) creates an infrastructure for storing, managing, and interacting with databases. It specifies the way the system stores data, a query language, which specifies how users interact with data, provides support for transactions and crash recovery. A good DBMS enables analysts to find where changes came from that can change the measurement of interest.
+<br>
+<b>There are hundreds of different DBMS -</b>e.g. network, hierarchical, relational, flat file model etc. The relational DBMS are the most widely used and optimal for many social science data analysis purposes.  Relational databases store data records in tables, each of which has a predefined set of columns - the pieces of information captured for each record in a table.  It stores data records as rows in the table, where a row has a place for a value for each column. The tables and their columns and relationships are defined in a schema. 
+ <br><br>
 
 <ul class="simple">
-  <li><b>CSV (Comma-Separated Values)</b><p>CSV is a simple text format for tabular data, where each line represents a record, and fields within each record are separated by commas (or other delimiters). It is commonly used for data exchange between spreadsheets and databases. These formats are typically the best suited for analysis, and you can easily work with them in a spreadsheet program - like Excel.  </p></li>
-  <li><b>Portable Document Formats (PDF)</b><p>PDF is a format for creating and viewing documents, maintaining their formatting and layout across different platforms. It is widely used for documents, reports, and e-books. </a>.</p></li>
-  <li><b>JSON (JavaScript Object Notation)</b><p>JSON is a lightweight, text-based data interchange format that is easy for both humans and machines to read and write. It is commonly used for representing structured data in web applications, APIs, and configuration files. JSON data is written as name/value pairs, which consists of a field name (in double quotes), followed by a colon, followed by a value. </p></li>
-  <li><b>XML (Extensible Markup Language)</b><p>XML is a versatile, text-based markup language used to encode and transport structured data. It is widely used in web services, document formats like HTML and RSS, and configuration files.</a></p></li>
-  <li><b>HTML (Hypertext Markup Language):</b><p>HTML is used for creating and structuring web pages. It defines the structure and presentation of content on the web and is often paired with CSS (Cascading Style Sheets) for styling.
+  <li><b>1:1 - a one to one relationship:</b><p>for each occurrence of one entity there is exactly one occurrence of a related entity.  </p></li>
+  <li><b>1:m -  a one to many relationship:</b><p>for each occurrence of one entity there is one or many occurrences of a related entity. </a>.</p></li>
+  <li><b>m:m - a many to many relationship:</b><p>for each occurrence of either entity, there is one or many occurrences of the other entity </p></li>
   </p></li>
   </ul>
-<p><img alt="machine-readable-data-formats" src="images/dataformats.JPG" /></p>
+<p><img alt="database-management-system-relationships" src="images/relationships.JPG" /></p>
+
+<h2>Components of a database</h2>
+<ul class="simple">
+  <li><p>Tables: Data arranged in row-column format similar to spreadsheet. </p></li>
+  <li><p>Entities: Database entities can be persons, places, measurements or quantities, events, objects etc. They are fundamental to all databases and record information. Each entity has corresponding properties and are the potential tables. </p></li>
+  <li><p>Properties: Detailed information about the database and the potential columns. </p></li>
+</ul>
+
+<h2>Importance of database</h2>
+Databases are the foundation of modern data management, enabling businesses, government agencies, research institutions, and various organizations to store, manage, and leverage data effectively, which, in turn, supports innovation, efficiency, and informed decision-making. We want to get data from multiple sources. Some key reasons why databases are important are as follows:
+<ul class="simple">
+  
+  <li><p>Data Organization: Databases provide a structured and organized way to store data. Data is categorized into tables, rows, and columns, making it easier to understand and manage. </p></li>
+  <li><p>Data Retrieval: Databases allow users to quickly and efficiently retrieve specific pieces of information from a vast dataset using query languages like SQL. This facilitates data analysis and reporting. </p></li>
+  <li><p>Concurrency Control: In multi-user environments, databases manage concurrent access to data, ensuring that multiple users can read and write data without conflicts or data corruption. </p></li>
+  <li><p>Data Analysis: Databases are essential for data analysis, reporting, and business intelligence. Analysts and decision-makers can use SQL queries to extract insights from data. </p></li>
+  <li><p>Data Sharing: Databases allow multiple users and applications to access and update data concurrently, facilitating collaboration and data sharing across different parts of an organization. </p></li>
+  <li><p>Data Integration: Databases can integrate data from various sources, enabling organizations to create a unified view of their data for better decision-making.  
+</ul>
+
+In summary, through  databases support data-driven decision-making by providing accurate and up-to-date information that can inform strategic and operational choices.
+
+
+
                 </article>
               
 
