@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Data and Database Management System</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="https://dataliteracy.github.io/">
+                    Data Literacy Program
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+          <li class="toctree-l1 has-children"><a class="reference internal" href="start/your-first-book.html">Pre Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+            <li class="toctree-l2"><a class="reference internal" href="start/overview.html">0.1 Setting up Google Colab</a></li>
+            <li class="toctree-l2"><a class="reference internal" href="start/create.html">0.2 Pre-Read</a></li>
+          </ul>
+          </li>
+
+          <p aria-level="2" class="caption" role="heading"><span class="caption-text">Program Outline</span></p>
+          <li class="toctree-l1 has-children"><a class="reference internal" href="one.html">1. Introduction to Data and Database Management System</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+          <li class="toctree-l2"><a class="reference internal" href="two.html">Introduction to the world of data</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="three.html">Understanding data formats</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="four.html">Introduction to the different types of databases</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="five.html">Introduction to Data Linkage</a></li>
+          </ul>
+          </li>
+          <li class="toctree-l1 has-children"><a class="reference internal" href="../content/executable/index.html">2. Finding Data Online and Navigating Databases</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+          <li class="toctree-l2"><a class="reference internal" href="../content/execute.html">Methods and Tools to find Data online</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="../content/code-outputs.html">Scraping Data from Web</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="../content/executable/output-insert.html">Data Cleaning and Preparation</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="../interactive/interactive.html">Assessing Data: Quality, Relationships</a></li>
+          </ul>
+          </li>
+          <li class="toctree-l1 has-children"><a class="reference internal" href="building/index.html">3. Measurement and Error</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+          <li class="toctree-l2"><a class="reference internal" href="build.html">Defining the target concept</a></li>
+          <li class="toctree-l2 has-children"><a class="reference internal" href="../publish/web.html">Measurement Error </a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+          <li class="toctree-l3"><a class="reference internal" href="../publish/gh-pages.html">Different Types and Sources of Error</a></li>
+          <li class="toctree-l3"><a class="reference internal" href="../publish/netlify.html">Data Missingness and ways to deal with missingness</a></li>
+          </ul>
+          </li>
+          <li class="toctree-l2"><a class="reference internal" href="../advanced/pdf.html">Build a PDF</a></li>
+          </ul>
+          </li>
+          <li class="toctree-l1 has-children"><a class="reference internal" href="../web/index.html">4. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+          <li class="toctree-l2"><a class="reference internal" href="repository.html">Introduction to Data Visualization</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="../interactive/hiding.html">Principles of Good Visualization</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="../interactive/launchbuttons.html">Visualization in Matplotlib and Seaborn</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="../interactive/thebe.html">Introduction to GIS and QGIS</a></li>
+          </ul>
+          </li>
+          <li class="toctree-l1 has-children"><a class="reference internal" href="../sphinx/index.html">5. Fundamentals of Data Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+          <li class="toctree-l2"><a class="reference internal" href="../advanced/sphinx.html">Exploratory Data Analysis</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="../advanced/developers.html">Probability and Introduction to Statistics</a></li>
+          </ul>
+          </li>
+          <li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/index.html">6. Analytical Tools - Python, SQL and Machine Learning  </a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+          <li class="toctree-l2"><a class="reference internal" href="../advanced/windows.html">Introduction to Spreadsheet</a></li>
+          </ul>
+          </li>
+          <li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/index.html">7. Data Bias and Ethics</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+          <li class="toctree-l2"><a class="reference internal" href="../advanced/windows.html">Sources of Data Bias</a></li>
+          </ul>
+          </li>
+          <li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/index.html">8. Data Governance and Data Privacy</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+          <li class="toctree-l2"><a class="reference internal" href="../advanced/windows.html">Introduction to Data Governance and Privacy</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="../advanced/windows.html">Understanding Data Governance and Framework Development</a></li>
+          </ul>
+          </li>
+          <li class="toctree-l1"><a class="reference internal" href="contribute/intro.html">9. Project Work</a></li>
+          </ul>
+          </li>
+          <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+          <ul class="nav bd-sidenav">
+          <li class="toctree-l1"><a class="reference internal" href="customize/config.html">Readings</a></li>
+          <li class="toctree-l1"><a class="reference internal" href="https://calendly.com/">Office Hours</a></li>
+          </ul>
+          </li>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>This chapter is still under construction.</p>
+</div>
+
+<h1 id="index">Module 2: Understanding Data Formats</h1>
+Data comes in various structured and unstructured formats. Much of what hinders data utilization is that data is available in formats that can’t be immediately used or read by a computer. Modern data analysis relies on software to do the heavy lifting involved in data analysis for us. Common data formats are standardized ways of structuring and encoding data for storage, exchange, and processing. They play a crucial role in data interoperability, as they enable different systems and applications to understand and work with data consistently. Here are some common data formats used in various domains: <br><br>
+
+<ul class="simple">
+  <li><b>CSV (Comma-Separated Values)</b><p>CSV is a simple text format for tabular data, where each line represents a record, and fields within each record are separated by commas (or other delimiters). It is commonly used for data exchange between spreadsheets and databases. These formats are typically the best suited for analysis, and you can easily work with them in a spreadsheet program - like Excel.  </p></li>
+  <li><b>Portable Document Formats (PDF)</b><p>PDF is a format for creating and viewing documents, maintaining their formatting and layout across different platforms. It is widely used for documents, reports, and e-books. </a>.</p></li>
+  <li><b>JSON (JavaScript Object Notation)</b><p>JSON is a lightweight, text-based data interchange format that is easy for both humans and machines to read and write. It is commonly used for representing structured data in web applications, APIs, and configuration files. JSON data is written as name/value pairs, which consists of a field name (in double quotes), followed by a colon, followed by a value. </p></li>
+  <li><b>XML (Extensible Markup Language)</b><p>XML is a versatile, text-based markup language used to encode and transport structured data. It is widely used in web services, document formats like HTML and RSS, and configuration files.</a></p></li>
+  <li><b>HTML (Hypertext Markup Language):</b><p>HTML is used for creating and structuring web pages. It defines the structure and presentation of content on the web and is often paired with CSS (Cascading Style Sheets) for styling.
+  </p></li>
+  </ul>
+<p><img alt="machine-readable-data-formats" src="images/dataformats.JPG" /></p>
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By: The World Bank Group
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
